@@ -14,6 +14,7 @@ import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import com.skeeter144.blocks.ISBlocks;
 import com.skeeter144.main.IslandSurvival;
 import com.skeeter144.skills.SkillMining;
 import com.skeeter144.util.BlockWrapper;
@@ -47,7 +48,9 @@ public class BlockBreakingHandler {
 			Blocks.diamond_ore,
 			Blocks.coal_ore, 
 			Blocks.redstone_ore, 
-			Blocks.emerald_ore};
+			Blocks.emerald_ore,
+			ISBlocks.mithrilOreBlock,
+			ISBlocks.adamantiteOreBlock};
 	
 	private final HashMap<Block, Integer> blockRespawnTimes = new HashMap<Block, Integer>();
 	private ArrayList<BlockWrapper> brokenBlocks = new ArrayList<BlockWrapper> ();
@@ -63,10 +66,15 @@ public class BlockBreakingHandler {
 		blockRespawnTimes.put(Blocks.coal_ore, 10);
 		blockRespawnTimes.put(Blocks.redstone_ore, 15);
 		blockRespawnTimes.put(Blocks.emerald_ore, 45);
+		blockRespawnTimes.put(ISBlocks.mithrilOreBlock, 60);
+		blockRespawnTimes.put(ISBlocks.adamantiteOreBlock, 90);
 	}
 	
 	@SubscribeEvent
 	public void onBlockBreaking(BreakEvent e){
+		if(playerHasPermission(e.getPlayer())){
+			return;
+		}	
 		e.setExpToDrop(0);
 		
 	//"world guard" checks	
@@ -79,12 +87,10 @@ public class BlockBreakingHandler {
 		}//end for loop
 		
 		if(!found){
-			if(playerHasPermission(e.getPlayer())){
-				return;
-			}	
 			e.setCanceled(true);
 			e.getPlayer().addChatMessage(new ChatComponentTranslation(EnumChatFormatting.RED + 
 					"You cannot break that block!"));
+			return;
 		}
 		
 		
@@ -106,7 +112,8 @@ public class BlockBreakingHandler {
 			}
 			
 			int pickTier = SkillMining.getTierForPickaxe(pick);
-			int blockTier = SkillMining.getTierForBlock(e.block);
+			Block b = e.block;
+			Integer blockTier = SkillMining.getTierForBlock(b);
 			
 			if(pickTier < blockTier){
 				String strPickTier = SkillMining.getPickaxeNameForTier(blockTier);
@@ -170,6 +177,9 @@ public class BlockBreakingHandler {
 	
 	@SubscribeEvent
 	public void onHarvest(HarvestDropsEvent e){
+		if( permissionLevel.equals("op") && playerHasPermission(e.harvester)){
+			return;
+		}
 		if(e.harvester != null){
 			for(ItemStack is :  e.block.getDrops(e.world, e.x, e.y, e.x, 0, e.fortuneLevel)){
 				e.harvester.inventory.addItemStackToInventory(is);

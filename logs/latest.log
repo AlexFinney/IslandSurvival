@@ -1,40 +1,25 @@
-[09:06:05] [main/INFO]: Logging in with username & password
-[09:06:08] [main/INFO]: Setting user: Skeeter144
-[09:06:09] [Client thread/INFO]: LWJGL Version: 2.9.1
-[09:06:11] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Island Survival
-[09:06:12] [Sound Library Loader/INFO]: Sound engine started
-[09:06:13] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
-[09:06:13] [Client thread/INFO]: Created: 256x256 textures/items-atlas
-[09:06:13] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Island Survival
-[09:06:13] [Client thread/INFO]: Created: 256x256 textures/items-atlas
-[09:06:13] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
-[09:06:14] [Sound Library Loader/INFO]: Sound engine started
-[09:06:17] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
-[09:06:17] [Server thread/INFO]: Generating keypair
-[09:06:17] [Server thread/INFO]: Preparing start region for level 0
-[09:06:18] [Server thread/INFO]: Changing view distance to 2, from 10
-[09:06:18] [Server thread/INFO]: Skeeter144[local:E:2dd1df52] logged in with entity id 301 at (-812.4448816453838, 4.0, -831.8029064307437)
-[09:06:18] [Server thread/INFO]: Skeeter144 joined the game
-[09:06:24] [Server thread/INFO]: [Skeeter144: Set the time to 0]
-[09:06:24] [Client thread/INFO]: [CHAT] Set the time to 0
-[09:06:33] [Client thread/INFO]: [CHAT] §cYou need at least an Iron Pickaxe to mine Iron Ore!
-[09:06:51] [Client thread/INFO]: [CHAT] §cYou need at least an Iron Pickaxe to mine Diamond Ore!
-[09:06:51] [Client thread/INFO]: [CHAT] §cYou need at least Mining level 15 to mine that!
-[09:07:05] [Client thread/INFO]: [CHAT] §cYou need at least an Iron Pickaxe to mine Gold Ore!
-[09:07:05] [Client thread/INFO]: [CHAT] §cYou need at least Mining level 10 to mine that!
-[09:07:09] [Server thread/INFO]: Saving and pausing game...
-[09:07:09] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
-[09:07:09] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
-[09:07:09] [Server thread/INFO]: Saving chunks for level 'New World'/The End
-[09:07:33] [Client thread/INFO]: [CHAT] §cYou need at least Mining level 10 to mine that!
-[09:07:35] [Server thread/INFO]: Saving and pausing game...
-[09:07:35] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
-[09:07:35] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
-[09:07:35] [Server thread/INFO]: Saving chunks for level 'New World'/The End
-[09:07:36] [Server thread/INFO]: Stopping server
-[09:07:36] [Server thread/INFO]: Saving players
-[09:07:36] [Server thread/INFO]: Saving worlds
-[09:07:36] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
-[09:07:36] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
-[09:07:36] [Server thread/INFO]: Saving chunks for level 'New World'/The End
-[09:07:37] [Client thread/INFO]: Stopping!
+[11:01:40] [main/INFO]: Logging in with username & password
+[11:01:43] [main/INFO]: Setting user: Skeeter144
+[11:01:44] [Client thread/INFO]: LWJGL Version: 2.9.1
+[11:01:47] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Island Survival
+[11:01:47] [Sound Library Loader/INFO]: Sound engine started
+[11:01:48] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[11:01:48] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[11:01:48] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Island Survival
+[11:01:48] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[11:01:49] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[11:01:49] [Sound Library Loader/INFO]: Sound engine started
+[11:01:52] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[11:01:52] [Server thread/INFO]: Generating keypair
+[11:01:52] [Server thread/INFO]: Preparing start region for level 0
+[11:01:53] [Server thread/INFO]: Changing view distance to 2, from 10
+[11:01:53] [Server thread/INFO]: Skeeter144[local:E:3c673428] logged in with entity id 306 at (-796.8150869699986, 4.0, -830.0665230536113)
+[11:01:53] [Server thread/INFO]: Skeeter144 joined the game
+[11:01:58] [Server thread/INFO]: [Skeeter144: Set the time to 0]
+[11:01:58] [Client thread/INFO]: [CHAT] Set the time to 0
+[11:02:14] [Client thread/INFO]: [CHAT] §cYou need at least Level §f17§c Mining to mine that!
+[11:02:42] [Client thread/INFO]: [CHAT] §aYou have level up to Mining 17!
+[11:03:01] [Server thread/INFO]: Saving and pausing game...
+[11:03:01] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[11:03:01] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[11:03:01] [Server thread/INFO]: Saving chunks for level 'New World'/The End

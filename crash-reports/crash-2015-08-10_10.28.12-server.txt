@@ -1,0 +1,76 @@
+---- Minecraft Crash Report ----
+// Surprise! Haha. Well, this is awkward.
+
+Time: 8/10/15 10:28 AM
+Description: Ticking memory connection
+
+java.lang.NullPointerException: Ticking memory connection
+	at com.skeeter144.events.BlockBreakingHandler.onBlockBreaking(BlockBreakingHandler.java:112)
+	at cpw.mods.fml.common.eventhandler.ASMEventHandler_7_BlockBreakingHandler_onBlockBreaking_BreakEvent.invoke(.dynamic)
+	at cpw.mods.fml.common.eventhandler.ASMEventHandler.invoke(ASMEventHandler.java:54)
+	at cpw.mods.fml.common.eventhandler.EventBus.post(EventBus.java:138)
+	at net.minecraftforge.common.ForgeHooks.onBlockBreakEvent(ForgeHooks.java:469)
+	at net.minecraft.server.management.ItemInWorldManager.tryHarvestBlock(ItemInWorldManager.java:285)
+	at net.minecraft.server.management.ItemInWorldManager.uncheckedTryHarvestBlock(ItemInWorldManager.java:234)
+	at net.minecraft.network.NetHandlerPlayServer.processPlayerDigging(NetHandlerPlayServer.java:532)
+	at net.minecraft.network.play.client.C07PacketPlayerDigging.processPacket(C07PacketPlayerDigging.java:61)
+	at net.minecraft.network.play.client.C07PacketPlayerDigging.processPacket(C07PacketPlayerDigging.java:94)
+	at net.minecraft.network.NetworkManager.processReceivedPackets(NetworkManager.java:241)
+	at net.minecraft.network.NetworkSystem.networkTick(NetworkSystem.java:182)
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:726)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:614)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:118)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:485)
+	at net.minecraft.server.MinecraftServer$2.run(MinecraftServer.java:752)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at com.skeeter144.events.BlockBreakingHandler.onBlockBreaking(BlockBreakingHandler.java:112)
+	at cpw.mods.fml.common.eventhandler.ASMEventHandler_7_BlockBreakingHandler_onBlockBreaking_BreakEvent.invoke(.dynamic)
+	at cpw.mods.fml.common.eventhandler.ASMEventHandler.invoke(ASMEventHandler.java:54)
+	at cpw.mods.fml.common.eventhandler.EventBus.post(EventBus.java:138)
+	at net.minecraftforge.common.ForgeHooks.onBlockBreakEvent(ForgeHooks.java:469)
+	at net.minecraft.server.management.ItemInWorldManager.tryHarvestBlock(ItemInWorldManager.java:285)
+	at net.minecraft.server.management.ItemInWorldManager.uncheckedTryHarvestBlock(ItemInWorldManager.java:234)
+	at net.minecraft.network.NetHandlerPlayServer.processPlayerDigging(NetHandlerPlayServer.java:532)
+	at net.minecraft.network.play.client.C07PacketPlayerDigging.processPacket(C07PacketPlayerDigging.java:61)
+	at net.minecraft.network.play.client.C07PacketPlayerDigging.processPacket(C07PacketPlayerDigging.java:94)
+	at net.minecraft.network.NetworkManager.processReceivedPackets(NetworkManager.java:241)
+
+-- Ticking connection --
+Details:
+	Connection: net.minecraft.network.NetworkManager@4af40c
+Stacktrace:
+	at net.minecraft.network.NetworkSystem.networkTick(NetworkSystem.java:182)
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:726)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:614)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:118)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:485)
+	at net.minecraft.server.MinecraftServer$2.run(MinecraftServer.java:752)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.7.10
+	Operating System: Windows 7 (x86) version 6.1
+	Java Version: 1.7.0_51, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) Client VM (mixed mode, sharing), Oracle Corporation
+	Memory: 95470016 bytes (91 MB) / 182034432 bytes (173 MB) up to 259522560 bytes (247 MB)
+	JVM Flags: 0 total; 
+	AABB Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	FML: MCP v9.05 FML v7.10.99.99 Minecraft Forge 10.13.4.1448 4 mods loaded, 4 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+	UCHIJAAAA	mcp{9.05} [Minecraft Coder Pack] (minecraft.jar) 
+	UCHIJAAAA	FML{7.10.99.99} [Forge Mod Loader] (forgeSrc-1.7.10-10.13.4.1448-1.7.10.jar) 
+	UCHIJAAAA	Forge{10.13.4.1448} [Minecraft Forge] (forgeSrc-1.7.10-10.13.4.1448-1.7.10.jar) 
+	UCHIJAAAA	is{1.0.0} [Island Survival] (bin) 
+	GL info: ~~ERROR~~ RuntimeException: No OpenGL context found in the current thread.
+	Profiler Position: N/A (disabled)
+	Vec3 Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	Player Count: 1 / 8; [EntityPlayerMP['Skeeter144'/305, l='New World', x=-813.09, y=4.00, z=-824.23]]
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'fml,forge'

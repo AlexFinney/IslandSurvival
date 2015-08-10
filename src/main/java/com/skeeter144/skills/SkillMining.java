@@ -2,6 +2,8 @@ package com.skeeter144.skills;
 
 import java.util.HashMap;
 
+import com.skeeter144.blocks.ISBlocks;
+
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -31,28 +33,34 @@ public class SkillMining {
 		pickaxeNameForTierMap.put(1, "Gold");
 		pickaxeNameForTierMap.put(1, "Diamond");
 		
-		blockTierMap.put(Blocks.coal_ore.getUnlocalizedName(), 1);
-		blockTierMap.put(Blocks.iron_ore.getUnlocalizedName(), 2);
-		blockTierMap.put(Blocks.gold_ore.getUnlocalizedName(), 2);
-		blockTierMap.put(Blocks.diamond_ore.getUnlocalizedName(), 2);
-		
 		pickaxeMap.put(Items.wooden_pickaxe.getUnlocalizedName(), 0);
 		pickaxeMap.put(Items.iron_pickaxe.getUnlocalizedName(), 3);
 		pickaxeMap.put(Items.golden_pickaxe.getUnlocalizedName(), 7);
 		pickaxeMap.put(Items.diamond_pickaxe.getUnlocalizedName(), 10);
+		
+		blockTierMap.put(Blocks.coal_ore.getUnlocalizedName(), 1);
+		blockTierMap.put(Blocks.iron_ore.getUnlocalizedName(), 2);
+		blockTierMap.put(Blocks.gold_ore.getUnlocalizedName(), 2);
+		blockTierMap.put(Blocks.diamond_ore.getUnlocalizedName(), 2);
+		blockTierMap.put(ISBlocks.mithrilOreBlock.getUnlocalizedName(), 2);
+		blockTierMap.put(ISBlocks.adamantiteOreBlock.getUnlocalizedName(), 3);
+		
+		
 		
 		
 		levelsMap.put(Block.getIdFromBlock(Blocks.coal_ore), 0);
 		levelsMap.put(Block.getIdFromBlock(Blocks.iron_ore), 3);
 		levelsMap.put(Block.getIdFromBlock(Blocks.gold_ore), 10);
 		levelsMap.put(Block.getIdFromBlock(Blocks.diamond_ore), 15);
+		levelsMap.put(Block.getIdFromBlock(ISBlocks.mithrilOreBlock), 15);
+		levelsMap.put(Block.getIdFromBlock(ISBlocks.adamantiteOreBlock), 17);
 		
 		expMap.put(Block.getIdFromBlock(Blocks.coal_ore), 5);
 		expMap.put(Block.getIdFromBlock(Blocks.iron_ore), 10);
 		expMap.put(Block.getIdFromBlock(Blocks.gold_ore), 25);
-		expMap.put(Block.getIdFromBlock(Blocks.diamond_ore), 250);
-		
-		
+		expMap.put(Block.getIdFromBlock(Blocks.diamond_ore), 100);
+		expMap.put(Block.getIdFromBlock(ISBlocks.mithrilOreBlock), 100);
+		expMap.put(Block.getIdFromBlock(ISBlocks.adamantiteOreBlock), 150);
 		
 	}
 	
