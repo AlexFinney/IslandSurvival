@@ -1,0 +1,39 @@
+package com.skeeter144.main;
+
+import com.skeeter144.crafting.Recipes;
+import com.skeeter144.init.ModBlocks;
+import com.skeeter144.items.ModItems;
+import com.skeeter144.learningmod.RefStrings;
+import com.skeeter144.proxies.CommonProxy;
+
+import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.SidedProxy;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+
+@Mod(modid = RefStrings.MODID, name = RefStrings.NAME, version = RefStrings.VERSION)
+public class LeanringMod {
+	
+	@SidedProxy(clientSide = RefStrings.CLIENT_PROXY, serverSide = RefStrings.COMMON_PROXY)
+	public static CommonProxy proxy;
+	
+	@Mod.EventHandler
+	public void preInit(FMLPreInitializationEvent e){
+		ModItems.registerItems();
+		ModBlocks.registerBlocks();
+		
+		Recipes.init();
+	}
+	
+	@Mod.EventHandler
+	public void init(FMLInitializationEvent e){
+		
+	}
+	
+	@Mod.EventHandler
+	public void postInit(FMLPostInitializationEvent e){
+		
+	}
+
+}

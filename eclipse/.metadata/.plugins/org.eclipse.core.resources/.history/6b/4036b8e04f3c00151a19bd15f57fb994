@@ -1,0 +1,13 @@
+package com.skeeter144.init;
+
+public class ItemLM extends Item {
+	
+	public ItemLM(String name)
+	    {
+	        super();
+	        this.setCreativeTab(CreativeTabs.tabMisc);
+	        this.setUnlocalizedName(name);
+	        this.setTextureName(Reference.MODID + “:” + name);
+	    }
+
+}

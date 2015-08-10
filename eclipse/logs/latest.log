@@ -1,0 +1,27 @@
+[21:22:47] [main/INFO]: Setting user: Player345
+[21:22:48] [Client thread/INFO]: LWJGL Version: 2.9.1
+[21:22:51] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Learning Mod
+[21:22:51] [Sound Library Loader/INFO]: Sound engine started
+[21:22:52] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[21:22:52] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[21:22:52] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Learning Mod
+[21:22:52] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[21:22:53] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[21:22:54] [Sound Library Loader/INFO]: Sound engine started
+[21:22:56] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[21:22:56] [Server thread/INFO]: Generating keypair
+[21:22:57] [Server thread/INFO]: Preparing start region for level 0
+[21:22:58] [Server thread/INFO]: Changing view distance to 8, from 10
+[21:22:58] [Server thread/INFO]: Player345[local:E:6fe0889c] logged in with entity id 22 at (-275.262505799416, 81.0, 413.32029792758993)
+[21:22:58] [Server thread/INFO]: Player345 joined the game
+[21:23:01] [Server thread/INFO]: Saving and pausing game...
+[21:23:01] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[21:23:01] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[21:23:01] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[21:23:01] [Server thread/INFO]: Stopping server
+[21:23:01] [Server thread/INFO]: Saving players
+[21:23:01] [Server thread/INFO]: Saving worlds
+[21:23:01] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[21:23:01] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[21:23:01] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[21:23:03] [Client thread/INFO]: Stopping!

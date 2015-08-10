@@ -1,0 +1,28 @@
+package com.skeeter144.items;
+
+import com.skeeter144.learningmod.RefStrings;
+import com.skeeter144.tabs.ModTabs;
+
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.item.ItemAxe;
+
+public class ItemLMAxe extends ItemAxe{
+
+	public ItemLMAxe(ToolMaterial material) {
+		super(material);
+		
+		setCreativeTab(ModTabs.modTab);
+		
+	}
+
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void registerIcons(IIconRegister par1IconRegister)
+	{
+		this.itemIcon = par1IconRegister.registerIcon(RefStrings.MODID + ":" + getUnlocalizedName().substring(5));
+	}
+
+	
+}

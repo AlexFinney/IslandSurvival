@@ -1,0 +1,11 @@
+package com.skeeter144.util;
+
+import java.io.Serializable;
+
+public class BlockWrapper implements Serializable{
+	
+	public BlockWrapper(){
+		
+	}
+
+}

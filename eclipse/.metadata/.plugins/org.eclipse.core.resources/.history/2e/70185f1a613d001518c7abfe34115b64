@@ -1,0 +1,11 @@
+package com.skeeter144.util;
+
+import net.minecraft.block.Block;
+
+public class BlockWrapper {
+
+	public BlockWrapper(Block block){
+		
+	}
+	
+}

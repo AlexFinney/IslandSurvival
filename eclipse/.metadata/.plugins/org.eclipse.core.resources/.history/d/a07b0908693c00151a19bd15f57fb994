@@ -1,0 +1,15 @@
+package com.skeeter144.init;
+
+import com.skeeter144.helper.RegisterHelper;
+import com.skeeter144.items.ItemLM;
+
+import net.minecraft.item.Item;
+
+public class ModItems {
+	
+	public static Item makeshiftHatchet = new ItemLM("Makeshift Hatchet");
+	
+	public static void registerItems(){
+		RegisterHelper.registerItem(makeshiftHatchet);
+	}
+}

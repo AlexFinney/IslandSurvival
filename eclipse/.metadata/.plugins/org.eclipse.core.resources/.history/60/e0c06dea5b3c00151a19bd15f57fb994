@@ -1,0 +1,18 @@
+package com.skeeter144.blocks;
+
+import com.skeeter144.learningmod.RefStrings;
+
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
+
+public class LMBlock extends Block {
+
+	protected LMBlock(String name) {
+		super(Material.rock);
+		this.setCreativeTab(CreativeTabs.tabBlock);
+		this.setBlockName(name);
+		this.setBlockTextureName(RefStrings.MODID + ":" + name);
+	}
+
+}

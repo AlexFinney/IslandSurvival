@@ -1,0 +1,19 @@
+package com.skeeter144.items;
+
+import com.skeeter144.learningmod.RefStrings;
+import com.skeeter144.tabs.ModTabs;
+
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
+
+public class ItemLM extends Item {
+	
+	public ItemLM(String name)
+	    {
+	        super();
+	        this.setCreativeTab(ModTabs.modTab);
+	        this.setUnlocalizedName(name);
+	        this.setTextureName(RefStrings.MODID + ":" + name);
+	    }
+
+}

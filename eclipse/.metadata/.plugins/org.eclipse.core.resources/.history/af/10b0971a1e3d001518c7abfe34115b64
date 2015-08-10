@@ -1,0 +1,13 @@
+package com.skeeter144.items;
+
+import com.skeeter144.helper.RegisterHelper;
+
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
+
+public class ModItems {
+	
+	
+	public static void registerItems(){
+	}
+}

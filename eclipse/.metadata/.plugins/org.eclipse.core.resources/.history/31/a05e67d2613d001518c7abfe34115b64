@@ -1,0 +1,20 @@
+package com.skeeter144.util;
+
+import java.io.Serializable;
+
+import net.minecraft.block.Block;
+import net.minecraft.world.World;
+
+public class BlockWrapper implements Serializable{
+	
+	World world;
+	int x;
+	int y;
+	int z;
+	Block block;
+	
+	public BlockWrapper(Block block){
+		
+	}
+	
+}

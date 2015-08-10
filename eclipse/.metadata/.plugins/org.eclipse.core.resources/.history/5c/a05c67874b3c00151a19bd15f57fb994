@@ -1,0 +1,10 @@
+package com.skeeter144.main;
+
+import com.skeeter144.learningmod.RefStrings;
+
+import cpw.mods.fml.common.Mod;
+
+@Mod(modid = RefStrings.MODID)
+public class LeanringMod {
+
+}

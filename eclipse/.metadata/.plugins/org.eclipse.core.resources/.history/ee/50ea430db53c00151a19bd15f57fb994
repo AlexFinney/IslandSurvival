@@ -1,0 +1,22 @@
+package com.skeeter144.tabs;
+
+import com.skeeter144.init.ModItems;
+
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
+
+public class LETab extends CreativeTabs{
+
+	String name;
+	
+	public LETab(int id, String name) {
+		super(id, name);
+		this.name = name;
+	}
+
+	@Override
+	public Item getTabIconItem() {
+		return ModItems.makeshiftHatchet;
+	}
+
+}

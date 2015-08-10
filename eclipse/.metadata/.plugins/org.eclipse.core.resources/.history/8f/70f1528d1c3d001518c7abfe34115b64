@@ -1,0 +1,6 @@
+package com.skeeter144.main;
+
+public class ClientProxy extends COmmonProxy
+{
+
+}

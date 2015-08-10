@@ -1,0 +1,9 @@
+package com.skeeter144.tabs;
+
+import net.minecraft.creativetab.CreativeTabs;
+
+public class ModTabs {
+
+	public static CreativeTabs modTab = new LETab(CreativeTabs.getNextID(), "LE Tab");
+	
+}

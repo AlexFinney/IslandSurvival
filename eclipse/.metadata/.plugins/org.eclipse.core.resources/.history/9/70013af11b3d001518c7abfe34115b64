@@ -1,0 +1,11 @@
+package com.skeeter144.items;
+
+import net.minecraft.item.ItemAxe;
+
+public class ItemLMAxe extends ItemAxe{
+
+	protected ItemLMAxe(ToolMaterial material) {
+		super(material);
+	}
+
+}

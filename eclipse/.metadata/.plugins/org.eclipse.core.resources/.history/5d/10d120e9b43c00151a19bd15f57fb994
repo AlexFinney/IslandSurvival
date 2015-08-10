@@ -1,0 +1,11 @@
+package com.skeeter144.tabs;
+
+import net.minecraft.creativetab.CreativeTabs;
+
+public class LETab extends CreativeTabs{
+
+	public LETab(int id, String name) {
+		super(id, name);
+	}
+
+}

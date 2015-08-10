@@ -1,0 +1,13 @@
+package com.skeeter144.main;
+
+import com.skeeter144.learningmod.RefStrings;
+
+import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.SidedProxy;
+
+@Mod(modid = RefStrings.MODID, name = RefStrings.NAME, version = RefStrings.VERSION)
+public class LeanringMod {
+	
+	
+
+}

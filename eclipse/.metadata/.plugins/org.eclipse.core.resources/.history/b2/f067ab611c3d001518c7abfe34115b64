@@ -1,0 +1,15 @@
+package com.skeeter144.items;
+
+import net.minecraft.item.Item;
+import net.minecraftforge.common.util.EnumHelper;
+
+public class ModTools {
+
+	
+		static Item.ToolMaterial MAKESHIFT = EnumHelper.addToolMaterial("MAKESHIFT", 
+				1, 256, 2.0f, 4.0f, 5);
+		
+		
+		public static Item makeshiftHatchet = new ItemLMAxe(MAKEAHIFT).setUnlocalizedName("makeshiftHatchet");
+		
+}

@@ -1,0 +1,15 @@
+package com.skeeter144.init;
+
+import com.skeeter144.blocks.LMBlock;
+import com.skeeter144.helper.RegisterHelper;
+
+import net.minecraft.block.Block;
+
+public class ModBlocks {
+
+	public static Block blackBlock = new LMBlock("blackBlock");
+	
+	public static void registerBlocks(){
+		RegisterHelper.registerBlock(blackBlock);
+	}
+}

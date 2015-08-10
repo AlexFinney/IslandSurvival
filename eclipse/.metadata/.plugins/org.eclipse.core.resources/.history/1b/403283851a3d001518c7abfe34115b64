@@ -1,0 +1,8 @@
+package com.skeeter144.proxies;
+
+public class CommonProxy {
+
+	public void registerRenderers(){
+		
+	}
+}
