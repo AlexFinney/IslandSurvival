@@ -27,6 +27,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.ChatComponentTranslation;
 import net.minecraft.util.EnumChatFormatting;
+import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldSavedData;
 import net.minecraft.world.WorldServer;
@@ -36,6 +37,7 @@ import net.minecraftforge.event.world.BlockEvent.BreakEvent;
 import net.minecraftforge.event.world.BlockEvent.HarvestDropsEvent;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class BlockBreakingHandler {
 	
@@ -66,6 +68,8 @@ public class BlockBreakingHandler {
 	@SubscribeEvent
 	public void onBlockBreaking(BreakEvent e){
 		e.setExpToDrop(0);
+		
+	//"world guard" checks	
 		boolean found = false;
 		for(Block b : mineableBlocks){
 			if(e.block.getUnlocalizedName().equals(b.getUnlocalizedName())){
@@ -82,6 +86,9 @@ public class BlockBreakingHandler {
 			e.getPlayer().addChatMessage(new ChatComponentTranslation(EnumChatFormatting.RED + 
 					"You cannot break that block!"));
 		}
+		
+		
+	//pickaxe checks
 		if( e.getPlayer().inventory.getCurrentItem().getItem()instanceof ItemPickaxe){
 			ItemPickaxe pick = (ItemPickaxe) e.getPlayer().inventory.getCurrentItem().getItem();
 			Integer level = SkillMining.getLevelForPick(pick);
@@ -94,15 +101,38 @@ public class BlockBreakingHandler {
 					.getMiningLevel() < level.intValue()){
 				e.getPlayer().addChatMessage(new ChatComponentTranslation(EnumChatFormatting.RED + 
 						"You need at least level " + level.intValue() + " Mining to use that pickaxe!"));
+				e.setCanceled(true);
+				return;
 			}
 			
+			int pickTier = SkillMining.getTierForPickaxe(pick);
+			int blockTier = SkillMining.getTierForBlock(e.block);
+			
+			if(pickTier < blockTier){
+				String strPickTier = SkillMining.getPickaxeNameForTier(blockTier);
+				String a = "";
+				switch(strPickTier){
+					case "Iron":
+						a = "an";
+						break;
+					default:
+						a= "a";
+				}
+				e.getPlayer().addChatMessage(new ChatComponentTranslation(EnumChatFormatting.RED + 
+						"You need at least " + a + " "  + strPickTier + " Pickaxe to"
+								+ " mine " + e.block.getLocalizedName()	+ "!"));
+				e.setCanceled(true);
+				
+			}
+			
+				
 		}else{
 			e.getPlayer().addChatMessage(new ChatComponentTranslation(EnumChatFormatting.RED + 
 					"You need to mine ores with a pickaxe, silly!"));
 		}
 		
 		
-		
+	//block level checks	
 		Integer levelReqForBlock = SkillMining.getLevelForBlockId(Block.getIdFromBlock(e.block));
 		if(levelReqForBlock == null)
 			return;
@@ -113,7 +143,7 @@ public class BlockBreakingHandler {
 				return;
 			e.setCanceled(true);
 			e.getPlayer().addChatMessage(new ChatComponentTranslation(EnumChatFormatting.RED + 
-					"You need at least Mining level " + levelReqForBlock + " to mine that!"));
+					"You need at least Level " + EnumChatFormatting.WHITE +  levelReqForBlock + EnumChatFormatting.RED +" Mining to mine that!"));
 		}
 		
 				
@@ -252,10 +282,7 @@ public class BlockBreakingHandler {
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-	
-
 }
