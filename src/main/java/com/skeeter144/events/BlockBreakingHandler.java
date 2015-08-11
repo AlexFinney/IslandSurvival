@@ -50,7 +50,8 @@ public class BlockBreakingHandler {
 			Blocks.redstone_ore, 
 			Blocks.emerald_ore,
 			ISBlocks.mithrilOreBlock,
-			ISBlocks.adamantiteOreBlock};
+			ISBlocks.adamantiteOreBlock,
+			ISBlocks.dragonStoneOreBlock};
 	
 	private final HashMap<Block, Integer> blockRespawnTimes = new HashMap<Block, Integer>();
 	private ArrayList<BlockWrapper> brokenBlocks = new ArrayList<BlockWrapper> ();
@@ -68,6 +69,7 @@ public class BlockBreakingHandler {
 		blockRespawnTimes.put(Blocks.emerald_ore, 45);
 		blockRespawnTimes.put(ISBlocks.mithrilOreBlock, 60);
 		blockRespawnTimes.put(ISBlocks.adamantiteOreBlock, 90);
+		blockRespawnTimes.put(ISBlocks.dragonStoneOreBlock, 120);
 	}
 	
 	@SubscribeEvent

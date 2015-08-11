@@ -1,5 +1,7 @@
 tile.blackBlock.name=Black Block
 tile.mithrilOreBlock.name=Mithril Ore
+tile.adamantiteOreBlock.name=Adamantite Ore
+tile.dragonStoneOreBlock.name=DragonStone Ore
 
 
 

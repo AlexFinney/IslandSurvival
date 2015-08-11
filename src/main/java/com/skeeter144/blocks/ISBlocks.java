@@ -18,10 +18,14 @@ public class ISBlocks {
 	public static Block adamantiteOreBlock = new BlockAdamantiteOre(Material.iron).setBlockName("adamantiteOreBlock")
 			.setBlockTextureName(Strings.MODID + ":adamantiteOreBlock").setCreativeTab(CreativeTabs.tabBlock);
 	
+	public static Block dragonStoneOreBlock = new BlockDragonStoneOre(Material.iron).setBlockName("dragonStoneOreBlock")
+			.setBlockTextureName(Strings.MODID + ":dragonStoneOreBlock").setCreativeTab(CreativeTabs.tabBlock);
+	
 	public static void init(){
 		GameRegistry.registerBlock(blackBlock, blackBlock.getUnlocalizedName());
 		GameRegistry.registerBlock(mithrilOreBlock, mithrilOreBlock.getUnlocalizedName());
 		GameRegistry.registerBlock(adamantiteOreBlock, adamantiteOreBlock.getUnlocalizedName());
+		GameRegistry.registerBlock(dragonStoneOreBlock, dragonStoneOreBlock.getUnlocalizedName());
 	}
 
 }

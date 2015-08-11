@@ -30,8 +30,8 @@ public class SkillMining {
 		
 		pickaxeNameForTierMap.put(1, "Wooden");
 		pickaxeNameForTierMap.put(2, "Iron");
-		pickaxeNameForTierMap.put(1, "Gold");
-		pickaxeNameForTierMap.put(1, "Diamond");
+		pickaxeNameForTierMap.put(3, "Gold");
+		pickaxeNameForTierMap.put(4, "Diamond");
 		
 		pickaxeMap.put(Items.wooden_pickaxe.getUnlocalizedName(), 0);
 		pickaxeMap.put(Items.iron_pickaxe.getUnlocalizedName(), 3);
@@ -42,8 +42,9 @@ public class SkillMining {
 		blockTierMap.put(Blocks.iron_ore.getUnlocalizedName(), 2);
 		blockTierMap.put(Blocks.gold_ore.getUnlocalizedName(), 2);
 		blockTierMap.put(Blocks.diamond_ore.getUnlocalizedName(), 2);
-		blockTierMap.put(ISBlocks.mithrilOreBlock.getUnlocalizedName(), 2);
-		blockTierMap.put(ISBlocks.adamantiteOreBlock.getUnlocalizedName(), 3);
+		blockTierMap.put(ISBlocks.mithrilOreBlock.getUnlocalizedName(), 4);
+		blockTierMap.put(ISBlocks.adamantiteOreBlock.getUnlocalizedName(), 4);
+		blockTierMap.put(ISBlocks.dragonStoneOreBlock.getUnlocalizedName(), 4);
 		
 		
 		
@@ -54,6 +55,7 @@ public class SkillMining {
 		levelsMap.put(Block.getIdFromBlock(Blocks.diamond_ore), 15);
 		levelsMap.put(Block.getIdFromBlock(ISBlocks.mithrilOreBlock), 15);
 		levelsMap.put(Block.getIdFromBlock(ISBlocks.adamantiteOreBlock), 17);
+		levelsMap.put(Block.getIdFromBlock(ISBlocks.dragonStoneOreBlock), 18);
 		
 		expMap.put(Block.getIdFromBlock(Blocks.coal_ore), 5);
 		expMap.put(Block.getIdFromBlock(Blocks.iron_ore), 10);
@@ -61,6 +63,7 @@ public class SkillMining {
 		expMap.put(Block.getIdFromBlock(Blocks.diamond_ore), 100);
 		expMap.put(Block.getIdFromBlock(ISBlocks.mithrilOreBlock), 100);
 		expMap.put(Block.getIdFromBlock(ISBlocks.adamantiteOreBlock), 150);
+		expMap.put(Block.getIdFromBlock(ISBlocks.dragonStoneOreBlock), 300);
 		
 	}
 	
