@@ -12,6 +12,11 @@ import cpw.mods.fml.client.registry.RenderingRegistry;
 public class ClientProxy extends ServerProxy {
 
 	@Override
+	public boolean isRemote() {
+		return false;
+	}
+	
+	@Override
 	public void registerRenderThings(){
 		RenderingRegistry.registerEntityRenderingHandler(EntityPenguinMob.class, 
 				new RenderPenguinMob(new ModelPenguin(), 0));

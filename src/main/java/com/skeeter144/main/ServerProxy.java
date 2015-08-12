@@ -6,6 +6,11 @@ import cpw.mods.fml.common.network.NetworkRegistry;
 
 public class ServerProxy {
 	
+	public boolean isRemote(){
+		return true;
+	}
+	
+	
 	public void registerRenderThings(){
 		
 	}

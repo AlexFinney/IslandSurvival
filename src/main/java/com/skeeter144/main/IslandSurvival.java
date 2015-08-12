@@ -27,6 +27,7 @@ import com.skeeter144.events.ConnectionHandler;
 import com.skeeter144.items.ISItems;
 import com.skeeter144.items.ISTools;
 import com.skeeter144.mobs.ISMobs;
+import com.skeeter144.skills.SkillCrafting;
 import com.skeeter144.skills.SkillMining;
 import com.skeeter144.skills.SkillsMain;
 import com.skeeter144.util.KeyBindings;
@@ -51,6 +52,10 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 @Mod(modid=Strings.MODID, name=Strings.NAME, version=Strings.VERSION)
 public class IslandSurvival {
+	
+	
+	public static final int levelsGuiId = 0;
+	public static final int craftingGuiId = 1;
 	
 	
 	@SidedProxy(clientSide = "com.skeeter144.main.ClientProxy", serverSide = "com.skeeter144.main.ServerProxy")
@@ -110,6 +115,7 @@ public class IslandSurvival {
 		
 		SkillsMain.init();
 		SkillMining.init();
+		SkillCrafting.init();
 		
 		
 		//Config handling
@@ -118,11 +124,13 @@ public class IslandSurvival {
 		
 		handler = new BlockBreakingHandler();
 		
-		FMLCommonHandler.instance().bus().register(new KeyInputHandler());
-		MinecraftForge.EVENT_BUS.register(new ConnectionHandler());
-		//FMLCommonHandler.instance().bus().register(new ConnectionHandler());
-		KeyBindings.init();
 		
+		MinecraftForge.EVENT_BUS.register(new ConnectionHandler());
+		
+		if(!proxy.isRemote()){
+			KeyBindings.init();
+			FMLCommonHandler.instance().bus().register(new KeyInputHandler());
+		}
 		
 	}
 	

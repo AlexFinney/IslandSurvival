@@ -14,6 +14,7 @@ import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import com.mojang.authlib.GameProfile;
 import com.skeeter144.blocks.ISBlocks;
 import com.skeeter144.main.IslandSurvival;
 import com.skeeter144.skills.SkillMining;
@@ -22,10 +23,12 @@ import com.skeeter144.util.BlockWrapper;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.management.ServerConfigurationManager;
 import net.minecraft.util.ChatComponentTranslation;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.StatCollector;
@@ -74,9 +77,15 @@ public class BlockBreakingHandler {
 	
 	@SubscribeEvent
 	public void onBlockBreaking(BreakEvent e){
-		if(playerHasPermission(e.getPlayer())){
+		if(!IslandSurvival.instance.proxy.isRemote()){
+			System.out.println("block breaking client side");
 			return;
-		}	
+		}else
+		System.out.println("block breaking server side");	
+		
+		if(playerHasPermission((EntityPlayerMP) e.getPlayer()))
+			return;
+			
 		e.setExpToDrop(0);
 		
 	//"world guard" checks	
@@ -93,8 +102,7 @@ public class BlockBreakingHandler {
 			e.getPlayer().addChatMessage(new ChatComponentTranslation(EnumChatFormatting.RED + 
 					"You cannot break that block!"));
 			return;
-		}
-		
+		}	
 		
 	//pickaxe checks
 		if( e.getPlayer().inventory.getCurrentItem().getItem()instanceof ItemPickaxe){
@@ -131,10 +139,7 @@ public class BlockBreakingHandler {
 						"You need at least " + a + " "  + strPickTier + " Pickaxe to"
 								+ " mine " + e.block.getLocalizedName()	+ "!"));
 				e.setCanceled(true);
-				
 			}
-			
-				
 		}else{
 			e.getPlayer().addChatMessage(new ChatComponentTranslation(EnumChatFormatting.RED + 
 					"You need to mine ores with a pickaxe, silly!"));
@@ -148,7 +153,7 @@ public class BlockBreakingHandler {
 		
 		if(IslandSurvival.instance.getPlayerLevelsDatabase().getPlayerLevels(e.getPlayer()
 				.getPersistentID()).getMiningLevel() < levelReqForBlock.intValue()){
-			if(playerHasPermission(e.getPlayer()))
+			if(playerHasPermission((EntityPlayerMP) e.getPlayer()))
 				return;
 			e.setCanceled(true);
 			e.getPlayer().addChatMessage(new ChatComponentTranslation(EnumChatFormatting.RED + 
@@ -158,13 +163,21 @@ public class BlockBreakingHandler {
 				
 	}//end onBlockBreak
 	
-	private boolean playerHasPermission(EntityPlayer p){
-		
+	private boolean playerHasPermission(EntityPlayer p){		
+		if(p == null)
+			return false;
 		if(permissionLevel.equalsIgnoreCase("none"))
 			return true;
 		else if(permissionLevel.equalsIgnoreCase("op")){
-			if(MinecraftServer.getServer().getConfigurationManager()
-					.func_152596_g(p.getGameProfile()))
+			ServerConfigurationManager config = MinecraftServer.getServer().getConfigurationManager();
+			if(config == null)
+				System.out.println("config manager is null");
+			if(p == null)
+				System.out.println("player is null");
+			GameProfile gp = p.getGameProfile();
+			if(gp == null)
+				System.out.println("gp is null");
+			if(config.func_152596_g(gp))
 				return true;
 		}
 		
@@ -179,7 +192,9 @@ public class BlockBreakingHandler {
 	
 	@SubscribeEvent
 	public void onHarvest(HarvestDropsEvent e){
-		if( permissionLevel.equals("op") && playerHasPermission(e.harvester)){
+		if(!IslandSurvival.proxy.isRemote())
+			return;
+		if( permissionLevel.equals("op") && playerHasPermission( e.harvester)){
 			return;
 		}
 		if(e.harvester != null){
@@ -205,7 +220,6 @@ public class BlockBreakingHandler {
 		}
 		
 	}
-	
 	
 	
 	private class BlockRespawner implements Runnable{
