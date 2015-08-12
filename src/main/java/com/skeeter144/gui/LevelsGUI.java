@@ -57,7 +57,6 @@ public class LevelsGUI extends GuiScreen {
 		
 		
 		
-		super.drawScreen(x, y, ticks);
 	}
 	
 	
@@ -107,6 +106,8 @@ public class LevelsGUI extends GuiScreen {
 		
 		fontRendererObj.drawString(Strings.EXP_TO, toolTipX + 5, toolTipY + 42, 0xFFFFFF);
 		fontRendererObj.drawString(formatter.format((double)expRem), toolTipX + 27, toolTipY + 51, 0x0000FF);
+		
+		fontRendererObj.drawString("dsfsdf", 0, 0, 0xFFFFFF);
 		
 	}
 

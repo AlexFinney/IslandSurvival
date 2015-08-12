@@ -6,6 +6,7 @@ import java.util.HashMap;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.StatCollector;
 
 public class Recipe {
 	
@@ -19,7 +20,7 @@ public class Recipe {
 	}
 	
 	public String getName(){
-		return LanguageRegistry.instance().getStringLocalization(result.getUnlocalizedName());
+		return StatCollector.translateToLocal(result.getUnlocalizedName() + ".name");
 	}
 	
 	public ArrayList<ItemStack> getResourcesRequired(){

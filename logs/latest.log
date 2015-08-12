@@ -1,24 +1,32 @@
-[22:35:35] [main/INFO]: Logging in with username & password
-[22:35:39] [main/INFO]: Setting user: Skeeter144
-[22:35:40] [Client thread/INFO]: LWJGL Version: 2.9.1
-[22:35:44] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Island Survival
-[22:35:45] [Sound Library Loader/INFO]: Sound engine started
-[22:35:46] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
-[22:35:46] [Client thread/INFO]: Created: 256x256 textures/items-atlas
-[22:35:47] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Island Survival
-[22:35:47] [Client thread/INFO]: Created: 256x256 textures/items-atlas
-[22:35:47] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
-[22:35:48] [Sound Library Loader/INFO]: Sound engine started
-[22:35:51] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
-[22:35:51] [Server thread/INFO]: Generating keypair
-[22:35:51] [Server thread/INFO]: Preparing start region for level 0
-[22:35:52] [Server thread/INFO]: Changing view distance to 2, from 10
-[22:35:52] [Server thread/INFO]: Skeeter144[local:E:6acc1fe7] logged in with entity id 313 at (-807.3516819398666, 4.0, -825.7093727086926)
-[22:35:52] [Server thread/INFO]: Skeeter144 joined the game
-[22:36:00] [Client thread/INFO]: Stopping!
-[22:36:00] [Server thread/INFO]: Stopping server
-[22:36:00] [Server thread/INFO]: Saving players
-[22:36:00] [Server thread/INFO]: Saving worlds
-[22:36:00] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
-[22:36:00] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
-[22:36:00] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[16:19:04] [main/INFO]: Logging in with username & password
+[16:19:15] [main/INFO]: Setting user: Skeeter144
+[16:19:19] [Client thread/INFO]: LWJGL Version: 2.9.1
+[16:19:30] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Island Survival
+[16:19:31] [Sound Library Loader/INFO]: Sound engine started
+[16:19:36] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[16:19:36] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[16:19:37] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Island Survival
+[16:19:37] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[16:19:38] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[16:19:39] [Sound Library Loader/INFO]: Sound engine started
+[16:19:49] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[16:19:49] [Server thread/INFO]: Generating keypair
+[16:19:50] [Server thread/INFO]: Preparing start region for level 0
+[16:19:51] [Server thread/INFO]: Preparing spawn area: 29%
+[16:19:52] [Server thread/INFO]: Changing view distance to 2, from 10
+[16:19:53] [Server thread/INFO]: Skeeter144[local:E:328cddf1] logged in with entity id 323 at (-807.3516819398666, 4.0, -825.7093727086926)
+[16:19:53] [Server thread/INFO]: Skeeter144 joined the game
+[16:19:55] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 3016ms behind, skipping 60 tick(s)
+[16:19:59] [Server thread/INFO]: [Skeeter144: Set the time to 0]
+[16:19:59] [Client thread/INFO]: [CHAT] Set the time to 0
+[16:20:48] [Server thread/INFO]: Saving and pausing game...
+[16:20:48] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[16:20:48] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[16:20:48] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[16:20:48] [Server thread/INFO]: Stopping server
+[16:20:48] [Server thread/INFO]: Saving players
+[16:20:48] [Server thread/INFO]: Saving worlds
+[16:20:48] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[16:20:48] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[16:20:48] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[16:20:50] [Client thread/INFO]: Stopping!

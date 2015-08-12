@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import com.skeeter144.items.ISItems;
+import com.skeeter144.items.ISTools;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -22,6 +23,12 @@ public class SkillCrafting {
 		chiselList.add(new ItemStack(Blocks.cobblestone, 1));
 		chiselList.add(new ItemStack(Items.stick, 1));
 		recipes.add(new Recipe(new ItemStack(ISItems.chisel,1), chiselList));
+		
+		ArrayList<ItemStack> hatchetList = new ArrayList<ItemStack>();
+		hatchetList.add(new ItemStack(Blocks.cobblestone, 1));
+		hatchetList.add(new ItemStack(Items.stick, 1));
+		hatchetList.add(new ItemStack(Blocks.vine, 1));
+		recipes.add(new Recipe(new ItemStack(ISTools.makeshiftHatchet, 1), hatchetList));
 	}
 	
 	
