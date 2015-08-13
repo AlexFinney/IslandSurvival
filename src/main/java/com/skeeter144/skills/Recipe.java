@@ -13,10 +13,16 @@ public class Recipe {
 	
 	ItemStack result;
 	ArrayList<ItemStack> resourcesRequired;
+	int levelRequired;
+	int expGiven;
+	int id;
 	
-	public Recipe(ItemStack result, ArrayList<ItemStack> resourcesRequired){
+	public Recipe(ItemStack result, ArrayList<ItemStack> resourcesRequired, int levelRequired, int expGiven, int id){
 		this.result = result;
 		this.resourcesRequired = resourcesRequired;
+		this.levelRequired = levelRequired;
+		this.expGiven = expGiven;
+		this.id = id;
 	}
 	
 	public String getName(){
@@ -29,5 +35,17 @@ public class Recipe {
 
 	public ItemStack getResult(){
 		return result;
+	}
+	
+	public int getExpGiven(){
+		return expGiven;
+	}
+	
+	public int getLevelRequired(){
+		return levelRequired;
+	}
+	
+	public int getId(){
+		return id;
 	}
 }

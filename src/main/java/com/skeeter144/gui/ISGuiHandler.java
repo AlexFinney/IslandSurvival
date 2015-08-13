@@ -9,6 +9,8 @@ import cpw.mods.fml.common.network.IGuiHandler;
 
 public class ISGuiHandler implements IGuiHandler {
 
+	public static CraftingGUI currentCraftingGUI;
+	
 	@Override
 	public Object getServerGuiElement(int ID, EntityPlayer player, World world,
 			int x, int y, int z) {
@@ -23,7 +25,8 @@ public class ISGuiHandler implements IGuiHandler {
 			case IslandSurvival.levelsGuiId:
 				return new LevelsGUI();
 			case IslandSurvival.craftingGuiId:
-				return new CraftingGUI();
+				currentCraftingGUI = new CraftingGUI();
+				return currentCraftingGUI;
 		}
 		return null;
 	}

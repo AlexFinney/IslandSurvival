@@ -27,6 +27,8 @@ import com.skeeter144.events.ConnectionHandler;
 import com.skeeter144.items.ISItems;
 import com.skeeter144.items.ISTools;
 import com.skeeter144.mobs.ISMobs;
+import com.skeeter144.packets.CraftingMessage;
+import com.skeeter144.packets.CraftingMessage.Handler;
 import com.skeeter144.skills.SkillCrafting;
 import com.skeeter144.skills.SkillMining;
 import com.skeeter144.skills.SkillsMain;
@@ -47,6 +49,8 @@ import cpw.mods.fml.common.event.FMLServerStartedEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.event.FMLServerStoppingEvent;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import cpw.mods.fml.common.network.NetworkRegistry;
+import cpw.mods.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -56,6 +60,8 @@ public class IslandSurvival {
 	
 	public static final int levelsGuiId = 0;
 	public static final int craftingGuiId = 1;
+	
+	public static SimpleNetworkWrapper network;
 	
 	
 	@SidedProxy(clientSide = "com.skeeter144.main.ClientProxy", serverSide = "com.skeeter144.main.ServerProxy")
@@ -116,6 +122,9 @@ public class IslandSurvival {
 		SkillsMain.init();
 		SkillMining.init();
 		SkillCrafting.init();
+		
+		network = NetworkRegistry.INSTANCE.newSimpleChannel("MyChannel");
+		network.registerMessage(Handler.class, CraftingMessage.class, 0, Side.SERVER);
 		
 		
 		//Config handling

@@ -20,10 +20,13 @@ public class PlayerLevels implements Serializable{
 	int miningExp = 0;
 	int attackExp = 0;
 	int defenseExp = 0;
+	int craftingExp = 0;
+	
 	
 	int miningLevel = 1;
 	int attackLevel = 1;
 	int defenseLevel = 1;
+	int craftingLevel = 1;
 	
 	
 	
@@ -38,6 +41,9 @@ public class PlayerLevels implements Serializable{
 				break;
 			case Strings.DEFENSE:
 				oldLevel = defenseLevel;
+				break;
+			case Strings.CRAFTING:
+				oldLevel = craftingLevel;
 				break;
 		}
 		int newLevel = SkillsMain.getLevelForExp(newExp);
@@ -111,12 +117,28 @@ public class PlayerLevels implements Serializable{
 			val = 0;
 		int oldExp = defenseExp;
 		this.defenseExp += val;
-		addExp(defenseExp,player,defenseExp, Strings.DEFENSE);
+		addExp(defenseExp,player,oldExp, Strings.DEFENSE);
 	}
 	
 	public int getDefenseLevel(){
 		return defenseLevel;
 	}
 	
+	
+	public int getCraftingLevel(){
+		return craftingLevel;
+	}
+	
+	public void addCraftingExp(int val, EntityPlayer player){
+		if(val < 0)
+			val = 0;
+		int oldExp = craftingExp;
+		this.craftingExp += val;
+		addExp(craftingExp, player, craftingExp, Strings.CRAFTING);
+	}
+
+	public int getCraftingExp() {
+		return craftingExp;
+	}
 
 }

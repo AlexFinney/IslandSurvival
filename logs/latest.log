@@ -1,32 +1,28 @@
-[16:19:04] [main/INFO]: Logging in with username & password
-[16:19:15] [main/INFO]: Setting user: Skeeter144
-[16:19:19] [Client thread/INFO]: LWJGL Version: 2.9.1
-[16:19:30] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Island Survival
-[16:19:31] [Sound Library Loader/INFO]: Sound engine started
-[16:19:36] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
-[16:19:36] [Client thread/INFO]: Created: 256x256 textures/items-atlas
-[16:19:37] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Island Survival
-[16:19:37] [Client thread/INFO]: Created: 256x256 textures/items-atlas
-[16:19:38] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
-[16:19:39] [Sound Library Loader/INFO]: Sound engine started
-[16:19:49] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
-[16:19:49] [Server thread/INFO]: Generating keypair
-[16:19:50] [Server thread/INFO]: Preparing start region for level 0
-[16:19:51] [Server thread/INFO]: Preparing spawn area: 29%
-[16:19:52] [Server thread/INFO]: Changing view distance to 2, from 10
-[16:19:53] [Server thread/INFO]: Skeeter144[local:E:328cddf1] logged in with entity id 323 at (-807.3516819398666, 4.0, -825.7093727086926)
-[16:19:53] [Server thread/INFO]: Skeeter144 joined the game
-[16:19:55] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 3016ms behind, skipping 60 tick(s)
-[16:19:59] [Server thread/INFO]: [Skeeter144: Set the time to 0]
-[16:19:59] [Client thread/INFO]: [CHAT] Set the time to 0
-[16:20:48] [Server thread/INFO]: Saving and pausing game...
-[16:20:48] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
-[16:20:48] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
-[16:20:48] [Server thread/INFO]: Saving chunks for level 'New World'/The End
-[16:20:48] [Server thread/INFO]: Stopping server
-[16:20:48] [Server thread/INFO]: Saving players
-[16:20:48] [Server thread/INFO]: Saving worlds
-[16:20:48] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
-[16:20:48] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
-[16:20:48] [Server thread/INFO]: Saving chunks for level 'New World'/The End
-[16:20:50] [Client thread/INFO]: Stopping!
+[12:19:23] [main/INFO]: Logging in with username & password
+[12:19:34] [main/INFO]: Setting user: Skeeter144
+[12:19:39] [Client thread/INFO]: LWJGL Version: 2.9.1
+[12:19:52] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Island Survival
+[12:19:54] [Sound Library Loader/INFO]: Sound engine started
+[12:19:58] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[12:19:59] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[12:19:59] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Island Survival
+[12:20:00] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[12:20:00] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[12:20:01] [Sound Library Loader/INFO]: Sound engine started
+[12:20:06] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[12:20:06] [Server thread/INFO]: Generating keypair
+[12:20:07] [Server thread/INFO]: Preparing start region for level 0
+[12:20:08] [Server thread/INFO]: Preparing spawn area: 8%
+[12:20:10] [Server thread/INFO]: Changing view distance to 2, from 10
+[12:20:10] [Server thread/INFO]: Skeeter144[local:E:69073352] logged in with entity id 333 at (-803.2512798848803, 4.0, -825.8863222915863)
+[12:20:10] [Server thread/INFO]: Skeeter144 joined the game
+[12:20:14] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 3939ms behind, skipping 78 tick(s)
+[12:20:17] [Server thread/INFO]: Skeeter144 lost connection: TextComponent{text='A fatal error has occured, this connection is terminated', siblings=[], style=Style{hasParent=false, color=null, bold=null, italic=null, underlined=null, obfuscated=null, clickEvent=null, hoverEvent=null}}
+[12:20:17] [Server thread/INFO]: Skeeter144 left the game
+[12:20:17] [Server thread/INFO]: Stopping singleplayer server as player logged out
+[12:20:17] [Server thread/INFO]: Stopping server
+[12:20:17] [Server thread/INFO]: Saving players
+[12:20:17] [Server thread/INFO]: Saving worlds
+[12:20:17] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[12:20:17] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[12:20:17] [Server thread/INFO]: Saving chunks for level 'New World'/The End

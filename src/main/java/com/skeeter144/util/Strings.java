@@ -19,6 +19,7 @@ public class Strings {
 	public static final String MINING = "Mining";
 	public static final String ATTACK = "Attack";
 	public static final String DEFENSE = "Defense";
+	public static final String CRAFTING = "Crafting";
 	
 	
 }

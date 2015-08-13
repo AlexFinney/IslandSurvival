@@ -9,10 +9,13 @@ import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.GL11;
 
+import com.skeeter144.main.IslandSurvival;
+import com.skeeter144.packets.CraftingMessage;
 import com.skeeter144.skills.Recipe;
 import com.skeeter144.skills.SkillCrafting;
 import com.skeeter144.util.Strings;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.ScaledResolution;
@@ -20,6 +23,7 @@ import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.multiplayer.GuiConnecting;
 import net.minecraft.client.renderer.ItemRenderer;
 import net.minecraft.client.renderer.entity.RenderItem;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -60,6 +64,7 @@ public class CraftingGUI extends GuiScreen {
 	}
 
 	private void drawItemInfo() {
+		EntityPlayer player = Minecraft.getMinecraft().thePlayer;
 		int guiX = (width - guiWidth) / 2;
 		int guiY = (height - guiHeight) / 2;
 		for(int i = 0; i < slots.size(); ++i){
@@ -69,9 +74,22 @@ public class CraftingGUI extends GuiScreen {
 				ArrayList<ItemStack> rr = slots.get(i).getRecipe().getResourcesRequired();
 				
 				for(int j = 0; j < rr.size(); ++j){
-					ItemStack stack =	rr.get(j);
+					final ItemStack stack =	rr.get(j);
+					
+					int levelRequired = slots.get(i).getRecipe().getLevelRequired();
+					int expGiven = slots.get(i).getRecipe().getExpGiven();
+					
 					String str = stack.getDisplayName() + " x " + stack.stackSize;
+					
+					IslandSurvival.instance.getPlayerLevelsDatabase().getPlayerLevels(player.getPersistentID());
+						
+					
+						
+						
 					fontRendererObj.drawString(str, guiX + 168, guiY + 60 + j * fontRendererObj.FONT_HEIGHT + 4, 0xFFFFFF);
+					fontRendererObj.drawString("Needed Level: " + levelRequired, guiX + 168, guiY + (guiHeight - 30), 0xFFFFFF);
+					fontRendererObj.drawString("Exp Given: " + expGiven, guiX + 168, guiY + (guiHeight - 30) + fontRendererObj.FONT_HEIGHT + 2, 0xFFFF00);
+				
 				}
 			
 			}
@@ -79,6 +97,10 @@ public class CraftingGUI extends GuiScreen {
 		
 		renderIcons();
 		
+	}
+	
+	private void craft(Recipe recipe){
+		IslandSurvival.network.sendToServer(new CraftingMessage(recipe.getId()));
 	}
 
 	private void renderIcons() {
@@ -123,7 +145,21 @@ public class CraftingGUI extends GuiScreen {
 		
 	}
 
-
+	@Override
+	protected void mouseClicked(int x, int y, int button) {
+		if(button == 0){
+			
+			for(int i = 0; i < slots.size(); ++i){
+				if(slots.get(i).containsPoint(getAdjustedMousePosition())){
+					Recipe recipe = slots.get(i).getRecipe();
+					IslandSurvival.network.sendToServer(new CraftingMessage(recipe.getId()));
+					System.out.println("clicked!");
+				}
+			}
+			
+		}
+	}	
+	
 	private void drawTabIcons() {
 
 	}
@@ -162,6 +198,10 @@ public class CraftingGUI extends GuiScreen {
 		final int mouseX = Mouse.getX() * width / mc.displayWidth;
 		final int mouseY = (height - Mouse.getY() * height / mc.displayHeight - 1);
 		return new Point2D.Double(mouseX,mouseY);
+	}
+	
+	public void notifyOfCanCraft(boolean bool){
+		
 	}
 
 }

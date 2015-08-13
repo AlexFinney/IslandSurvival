@@ -22,19 +22,28 @@ public class SkillCrafting {
 		ArrayList<ItemStack> chiselList = new ArrayList<ItemStack>();
 		chiselList.add(new ItemStack(Blocks.cobblestone, 1));
 		chiselList.add(new ItemStack(Items.stick, 1));
-		recipes.add(new Recipe(new ItemStack(ISItems.chisel,1), chiselList));
+		recipes.add(new Recipe(new ItemStack(ISItems.chisel,1), chiselList, 1, 5, 0));
 		
 		ArrayList<ItemStack> hatchetList = new ArrayList<ItemStack>();
 		hatchetList.add(new ItemStack(Blocks.cobblestone, 1));
 		hatchetList.add(new ItemStack(Items.stick, 1));
 		hatchetList.add(new ItemStack(Blocks.vine, 1));
-		recipes.add(new Recipe(new ItemStack(ISTools.makeshiftHatchet, 1), hatchetList));
+		recipes.add(new Recipe(new ItemStack(ISTools.makeshiftHatchet, 1), hatchetList, 2, 10, 1));
 	}
 	
 	
 	
 	public static ArrayList<Recipe>  getRecipes(){
 		return recipes;
+	}
+	
+	public static Recipe getRecipeForId(int id){
+		for(int i = 0; i < recipes.size(); ++i){
+			if(recipes.get(i).getId() == id){
+				return recipes.get(i);
+			}
+		}
+		return null;
 	}
 	
 

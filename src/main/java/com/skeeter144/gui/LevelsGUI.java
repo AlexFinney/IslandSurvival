@@ -3,6 +3,7 @@ package com.skeeter144.gui;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
@@ -14,13 +15,9 @@ import com.skeeter144.skills.SkillsMain;
 import com.skeeter144.util.Strings;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.ScaledResolution;
-import net.minecraft.client.renderer.EntityRenderer;
-import net.minecraft.client.renderer.texture.TextureUtil;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
 
 public class LevelsGUI extends GuiScreen {
@@ -41,6 +38,9 @@ public class LevelsGUI extends GuiScreen {
 	int curHoverX = 0;
 	int curHoverY = 0;
 	String hoverName = "";
+	
+	ArrayList<GuiLevelsButton> levelButtons;
+	
 	
 	//two pixel space between images + 32 pixels in width
 	Rectangle2D miningRect = new Rectangle2D.Double(12,12,iconWidth,iconHeight);
@@ -79,7 +79,9 @@ public class LevelsGUI extends GuiScreen {
 				exp = db.getPlayerLevels(player.getPersistentID()).getAttackExp();	
 				break;
 			case Strings.DEFENSE:
-				exp = db.getPlayerLevels(player.getPersistentID()).getDefenseExp();	
+				exp = db.getPlayerLevels(player.getPersistentID()).getDefenseExp();
+			case Strings.CRAFTING:
+				exp = db.getPlayerLevels(player.getPersistentID()).getCraftingExp();
 				break;
 		}
 		
@@ -107,7 +109,6 @@ public class LevelsGUI extends GuiScreen {
 		fontRendererObj.drawString(Strings.EXP_TO, toolTipX + 5, toolTipY + 42, 0xFFFFFF);
 		fontRendererObj.drawString(formatter.format((double)expRem), toolTipX + 27, toolTipY + 51, 0x0000FF);
 		
-		fontRendererObj.drawString("dsfsdf", 0, 0, 0xFFFFFF);
 		
 	}
 
@@ -117,10 +118,46 @@ public class LevelsGUI extends GuiScreen {
 		int guiX = (width - guiWidth) / 2;
 		int guiY = (height - guiHeight) / 2;
 		currentHoverRect = null;
-		curHoverX = 0;
-		curHoverY = 0;
-		hoverName = "";
-				
+		
+		levelButtons = new ArrayList<GuiLevelsButton>();
+		
+	//mining
+		levelButtons.add(new GuiLevelsButton(0,192,iconsGuiLoc, "Mining"));
+	//attack	
+		levelButtons.add(new GuiLevelsButton(32,192,iconsGuiLoc, "Attack"));
+	//defense	
+		levelButtons.add(new GuiLevelsButton(64,192,iconsGuiLoc, "Defense"));
+	//crafting	
+		levelButtons.add(new GuiLevelsButton(96,192,iconsGuiLoc, "Crafting"));
+		
+		
+		int currentRow = 0;
+		int currentColumn = 0;
+		for(int i = 0; i < levelButtons.size(); ++i){
+			
+			if(currentColumn * iconWidth + currentColumn * 4 + 32 + 12 > guiWidth ){
+				currentColumn = 0; 
+				currentRow++;
+			}
+			Rectangle2D.Double rect = new Rectangle2D.Double(guiX + 12 + currentColumn * iconWidth + currentColumn * 4, 
+															 guiY + 12 + currentRow * iconHeight + currentRow * 8, 
+															 iconWidth, iconHeight);
+			levelButtons.get(i).setRect(rect);
+			if(levelButtons.get(i).containsPoint(getAdjustedMousePosition())){
+				drawTexturedModalRect(guiX + 12 + currentColumn * iconWidth + currentColumn * 4,(int) rect.getY(), (int)levelButtons.get(i).getU(), (int)levelButtons.get(i).getV() + (int)rect.getHeight(),
+						(int)rect.getWidth(), (int)rect.getHeight());
+				hoverName = levelButtons.get(i).getName();
+				currentHoverRect = rect;
+			}else{
+				drawTexturedModalRect((int)rect.getX(),(int) rect.getY(), (int)levelButtons.get(i).getU(), (int)levelButtons.get(i).getV(),
+						(int)rect.getWidth(), (int)rect.getHeight());
+			}
+			currentColumn++;
+		}
+		
+		
+		
+		/*		
 		if(miningRect.contains(getAdjustedMousePosition())){
 			drawTexturedModalRect((int)miningRect.getX() + guiX, (int)miningRect.getY() + guiY, 0, 224, (int)miningRect.getWidth(), (int)miningRect.getHeight());
 			currentHoverRect = miningRect;
@@ -150,6 +187,7 @@ public class LevelsGUI extends GuiScreen {
 		}else{
 			drawTexturedModalRect((int)defenseRect.getX() + guiX, (int)defenseRect.getY() + guiY, 64, 192, (int)attackRect.getWidth(), (int)defenseRect.getHeight());
 		}
+		*/
 		drawToolTip();
 	}
 
@@ -200,8 +238,8 @@ public class LevelsGUI extends GuiScreen {
 		final int height = sr.getScaledHeight();
 		final int guiLeft = (width - this.guiWidth) / 2;
 		final int guiTop = (height - this.guiHeight) / 2;
-		final int mouseX = (Mouse.getX() * width / mc.displayWidth) - guiLeft;
-		final int mouseY = (height - Mouse.getY() * height / mc.displayHeight - 1) - guiTop;
+		final int mouseX = (Mouse.getX() * width / mc.displayWidth);
+		final int mouseY = (height - Mouse.getY() * height / mc.displayHeight - 1);
 		return new Point2D.Double(mouseX,mouseY);
 	}
 
