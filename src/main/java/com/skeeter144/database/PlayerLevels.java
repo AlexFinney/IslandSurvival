@@ -63,6 +63,9 @@ public class PlayerLevels implements Serializable{
 			case Strings.DEFENSE:
 				++defenseLevel;
 				break;
+			case Strings.CRAFTING:
+				++craftingLevel;
+				break;
 		}
 		}
 			
@@ -134,7 +137,7 @@ public class PlayerLevels implements Serializable{
 			val = 0;
 		int oldExp = craftingExp;
 		this.craftingExp += val;
-		addExp(craftingExp, player, craftingExp, Strings.CRAFTING);
+		addExp(craftingExp, player, oldExp, Strings.CRAFTING);
 	}
 
 	public int getCraftingExp() {

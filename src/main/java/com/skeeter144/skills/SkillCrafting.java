@@ -20,7 +20,7 @@ public class SkillCrafting {
 		
 		
 		ArrayList<ItemStack> chiselList = new ArrayList<ItemStack>();
-		chiselList.add(new ItemStack(Blocks.cobblestone, 1));
+		chiselList.add(new ItemStack(Blocks.cobblestone, 5));
 		chiselList.add(new ItemStack(Items.stick, 1));
 		recipes.add(new Recipe(new ItemStack(ISItems.chisel,1), chiselList, 1, 5, 0));
 		
